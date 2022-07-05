@@ -1,6 +1,6 @@
 from PIL import Image
 import numpy as np
-from RSA import encrypt, decrypt
+from RSA import encrypt
 
 key = (int(input("first number in public key:")), int(input("second number in public key")))
 
