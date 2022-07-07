@@ -10,8 +10,12 @@ try:
 except FileNotFoundError:
     exit("Invalid Path")
 
-def batch_decrypt(pixel: np.ndarray, x, y):
+# for i in img:
+#     print(i)
+
+def batch_decrypt(pixel: np.ndarray):
     ans = []
+    
     for i in pixel:
         ans.append(decrypt(i, key))
     return np.array(ans)
@@ -20,7 +24,7 @@ ans = np.empty(img.shape, dtype=np.uint8)
 for x in range(0, len(img)):
     for y in range(0, len(img[x])):
         if y % 10 == 0 and x % 10 == 0:
-            ans[x][y] = batch_decrypt(img[x][y], x, y)            
+            ans[x][y] = batch_decrypt(img[x][y])            
             continue
         ans[x][y] = img[x][y]
 try:

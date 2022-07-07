@@ -42,3 +42,5 @@ try:
         print("\npublic key:", key_gen(PRIME)[0], "\nprivate key:", key_gen(PRIME)[1])
 except IndexError:
     pass
+
+print(encrypt(255, (3, 101284087)))
